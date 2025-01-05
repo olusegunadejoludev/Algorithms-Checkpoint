@@ -1,0 +1,38 @@
+def analyze_sentence(sentence):
+    //Check if the sentence ends with a point
+    if sentence[-1] != '.':
+        print("Error: The sentence does not end with a point.")
+        return
+    
+    //Initialize counters for length, words, and vowels
+    length_counter = 0
+    words_counter = 0
+    vowels_counter = 0
+    
+    //Define a set of vowels for easy checking
+    vowels = set("aeiouAEIOU")
+    
+    //Iterate through each character in the sentence
+    for char in sentence:
+        //Increment the length counter for each character
+        length_counter += 1
+        
+        //Check if the character is a space, indicating a new word
+        if char == ' ':
+            words_counter += 1
+        
+        //Check if the character is a vowel
+        if char in vowels:
+            vowels_counter += 1
+    
+    //Increment the words counter for the last word (after the last space)
+    words_counter += 1
+    
+    //Print the results
+    print("Length of the sentence:", length_counter)
+    print("Number of words in the sentence:", words_counter)
+    print("Number of vowels in the sentence:", vowels_counter)
+
+//Example usage
+input_sentence = input("Ada goes to school.: ")
+analyze_sentence(input_sentence)
